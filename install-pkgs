@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -x
+
+set -e
+
+# update packages index
+pacman -Syu
+
+# yay isn't in pacman for some reason
+pacman -S pacaur
+pacaur -S yay
+
+while read pkg; do
+  yay -S $pkg
+done <pkgs
