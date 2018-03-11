@@ -8,6 +8,7 @@
     '~'
 
 - link:
-    ~/.ssh:       '/keybase/private/andersonsilva/home/ssh'
-    ~/.gitconfig: 'gitconfig'
-    ~/.zshrc:     'zshrc'
+    ~/.ssh:                                        '/keybase/private/andersonsilva/home/ssh'
+    ~/.gitconfig:                                  'gitconfig'
+    ~/.zshrc:                                      'zshrc'
+    ~/.config/gconf/apps/guake/general/%gconf.xml: 'guakeconf'
