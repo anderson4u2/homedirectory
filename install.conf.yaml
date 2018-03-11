@@ -10,3 +10,4 @@
 - link:
     ~/.ssh:       '/keybase/private/andersonsilva/home/ssh'
     ~/.gitconfig: 'gitconfig'
+    ~/.zshrc:     'zshrc'
