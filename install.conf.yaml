@@ -7,6 +7,9 @@
 - clean:
     '~'
 
+- shell:
+  - [ansible-playbook -K deps/pkgs.yml, Installing packages and deps]
+
 - link:
     ~/.ssh:                                        '/keybase/private/andersonsilva/home/ssh'
     ~/.gitconfig:                                  'gitconfig'

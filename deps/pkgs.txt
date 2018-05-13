@@ -1,3 +1,4 @@
+aptitude
 atom
 docker
 docker-compose
@@ -35,7 +36,6 @@ python2-aws-cli
 python2-gnomekeyring
 python2-s3transfer
 ranger
-redshift
 rofi
 ruby-bundler
 screen
@@ -46,4 +46,3 @@ steam
 tig
 tmux
 xfsprogs
-yaourt
