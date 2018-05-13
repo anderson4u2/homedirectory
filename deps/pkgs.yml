@@ -13,4 +13,4 @@
 
   - name: Install deps
     apt:
-      name: "{{ lookup('file', './deps/pkgs.txt') }}"
+      name: "{{ lookup('file', '{{ playbook_dir }}/deps/pkgs.txt') }}"
