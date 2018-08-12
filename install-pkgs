@@ -28,7 +28,7 @@ dnf check-update
 sudo dnf -y install code
 
 # Install snapd for installing snaps later
-sudo dnf install snapd
+sudo dnf -y install snapd
 sudo ln -s /var/lib/snapd/snap /snap
 
 # Installing Snapcraft stuff
