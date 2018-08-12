@@ -5,7 +5,7 @@ set -x
 set -e
 
 # update packages index
-dnf update -y
+# sudo dnf update -y
 
 # set hostname as Fedora doesn't give it one during installation
 hostnamectl set-hostname x1
@@ -14,5 +14,32 @@ hostnamectl set-hostname x1
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 while read pkg; do
-  dnf -y $pkg
+  sudo dnf -y $pkg
 done <pkgs
+
+# Add key and install repository for VSCode
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+# Update dnf and install vscode
+dnf check-update
+sudo dnf install code
+
+# Install snapd for installing snaps later
+sudo dnf install snapd
+sudo ln -s /var/lib/snapd/snap /snap
+
+# Installing Snapcraft stuff
+sudo snap install atom --classic
+sudo snap install chromium
+sudo snap install bitwarden
+sudo snap install gitkraken
+sudo snap install gnome-system-monitor
+sudo snap install google-play-music-desktop-player
+sudo snap install simplenote
+sudo snap install slack --classic
+sudo snap install spotify
+sudo snap install vlc
+
+# Install Keybase
+sudo yum install https://prerelease.keybase.io/keybase_amd64.rpm
+run_keybase
