@@ -8,8 +8,7 @@ i3-doc
 i3lock
 i3status
 ipython
-jdk8-openjdk
-lvm2
+java-1.8.0-openjdk
 make
 meld
 mpv
