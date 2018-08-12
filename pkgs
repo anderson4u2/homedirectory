@@ -1,12 +1,9 @@
-chromium
 direnv
 docker
 docker-compose
-drone-cli
-feh
 flake8
 google-cloud-sdk
-guake-gtk2-git
+guake
 httpie
 i3-gaps
 i3blocks-gaps-git
