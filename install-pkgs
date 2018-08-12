@@ -5,12 +5,14 @@ set -x
 set -e
 
 # update packages index
-sudo pacman --noconfirm -Syu
+dnf update -y
 
-# yay isn't in pacman for some reason
-sudo pacman -S --needed --noconfirm pacaur
-pacaur -S --needed --noconfirm yay
+# set hostname as Fedora doesn't give it one during installation
+hostnamectl set-hostname x1
+
+# enable free and non-free 3rd party repos
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 while read pkg; do
-  yay -S --needed --noconfirm $pkg
+  dnf -y $pkg
 done <pkgs
