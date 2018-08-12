@@ -17,6 +17,9 @@ while read pkg; do
   sudo dnf -y install $pkg
 done <pkgs
 
+# Install Oh-My-Zsh
+wget --no-check-certificate http://install.ohmyz.sh -O - | sh
+
 # Add key and install repository for VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'

@@ -13,7 +13,6 @@ make
 meld
 neovim
 nload
-zsh
 powertop
 pwgen
 py3status
@@ -29,3 +28,4 @@ terminator
 the_silver_searcher
 tig
 tmux
+zsh
