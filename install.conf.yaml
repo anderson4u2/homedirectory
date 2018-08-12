@@ -10,5 +10,6 @@
 - link:
     ~/.ssh:                                        '/keybase/private/andersonsilva/home/ssh'
     ~/.gitconfig:                                  'gitconfig'
+    ~/.gitignore:                                  'gitignore'
     ~/.zshrc:                                      'zshrc'
     ~/.config/gconf/apps/guake/general/%gconf.xml: 'guakeconf'
