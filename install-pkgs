@@ -14,7 +14,7 @@ hostnamectl set-hostname x1
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 while read pkg; do
-  sudo dnf -y $pkg
+  sudo dnf -y install $pkg
 done <pkgs
 
 # Add key and install repository for VSCode
