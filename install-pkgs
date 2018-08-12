@@ -34,6 +34,7 @@ sudo snap install chromium
 sudo snap install bitwarden
 sudo snap install gitkraken
 sudo snap install gnome-system-monitor
+sudo snap install google-cloud-sdk --classic
 sudo snap install google-play-music-desktop-player
 sudo snap install simplenote
 sudo snap install slack --classic

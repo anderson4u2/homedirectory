@@ -1,8 +1,6 @@
 direnv
 docker
 docker-compose
-flake8
-google-cloud-sdk
 guake
 httpie
 i3-gaps
@@ -16,7 +14,7 @@ meld
 mpv
 neovim
 nload
-oh-my-zsh-git
+zsh
 powertop
 pwgen
 py3status
