@@ -23,12 +23,9 @@ python-pip
 python-virtualenv
 qbittorrent
 ranger
-rofi
 screen
-scrot
-silver-searcher-git
 steam
 terminator
+the_silver_searcher
 tig
 tmux
-xfsprogs
