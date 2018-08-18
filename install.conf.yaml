@@ -12,4 +12,3 @@
     ~/.gitconfig:                                  'gitconfig'
     ~/.gitignore:                                  'gitignore'
     ~/.zshrc:                                      'zshrc'
-    ~/.config/gconf/apps/guake/general/%gconf.xml: 'guakeconf'

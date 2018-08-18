@@ -10,3 +10,5 @@ Notes in general
 
 - Change scrolling of touchpad manually
 - Change display resolution manually
+- Deactivate wayland: https://ask.fedoraproject.org/en/question/96134/how-can-i-set-xorg-as-a-default-on-fedora-25/
+- Install dropbox from their website: https://www.dropbox.com/en_GB/install-linux

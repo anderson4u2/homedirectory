@@ -52,8 +52,6 @@ sudo ln -s /var/lib/snapd/snap /snap
 sudo snap install atom --classic
 sudo snap install chromium
 sudo snap install bitwarden
-sudo snap install gitkraken
-sudo snap install gnome-system-monitor
 sudo snap install google-play-music-desktop-player
 sudo snap install simplenote
 # sudo snap install slack --classic INSTALL SLACK BY DOWNLOADING, SNAP DOESNT WORK
