@@ -17,6 +17,7 @@ meld
 neovim
 nload
 powertop
+ps_mem
 pwgen
 py3status
 python-neovim
