@@ -13,3 +13,4 @@ Notes in general
 - Deactivate wayland: https://ask.fedoraproject.org/en/question/96134/how-can-i-set-xorg-as-a-default-on-fedora-25/
     - It seems KDE Fedora uses x11 by default
 - Install dropbox from their website: https://www.dropbox.com/en_GB/install-linux
+- To automate screen resolution change probably need edit this file with ansible: ~/.local/share/kscreen/<some random id>
