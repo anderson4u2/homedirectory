@@ -11,4 +11,7 @@
     ~/.ssh:                                        '/keybase/private/andersonsilva/home/ssh'
     ~/.gitconfig:                                  'gitconfig'
     ~/.gitignore:                                  'gitignore'
-    ~/.zshrc:                                      'zshrc'
+    ~/.config/terminator/config:                   'terminator.cfg'
+    ~/.zshrc:
+      force: true
+      path: 'zshrc'
