@@ -1,5 +1,5 @@
 kcminputrc Mouse cursorTheme 'breeze_cursors'
-!/home/anderson/.config/kcminputrc
+/home/anderson/.config/kcminputrc
 !/etc/xdg/kcminputrc
 !/home/anderson/.local/share/config/kcminputrc
 !/home/anderson/.local/share/flatpak/exports/share/config/kcminputrc
@@ -9,7 +9,7 @@ kcminputrc Mouse cursorTheme 'breeze_cursors'
 !/var/lib/snapd/desktop/config/kcminputrc
 *
 kcminputrc Mouse cursorSize ''
-!/home/anderson/.config/kcminputrc
+/home/anderson/.config/kcminputrc
 !/etc/xdg/kcminputrc
 !/home/anderson/.local/share/config/kcminputrc
 !/home/anderson/.local/share/flatpak/exports/share/config/kcminputrc
