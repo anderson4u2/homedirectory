@@ -17,6 +17,6 @@
       force: true
     ~/.config/:
       glob: true
-      path: home/config/*
+      path: config/*
       relink: true
       force: true
