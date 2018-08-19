@@ -20,3 +20,4 @@
       path: config/*
       relink: true
       force: true
+      create: true
