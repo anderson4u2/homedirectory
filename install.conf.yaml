@@ -13,5 +13,10 @@
     ~/.gitignore:                                  'gitignore'
     ~/.config/terminator/config:                   'terminator.cfg'
     ~/.zshrc:
-      force: true
       path: 'zshrc'
+      force: true
+    ~/.config/:
+      glob: true
+      path: config/*
+      relink: true
+      force: true
