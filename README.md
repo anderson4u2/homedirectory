@@ -16,3 +16,5 @@ Notes in general
 - To automate screen resolution change probably need edit this file with ansible: ~/.local/share/kscreen/<some random id>
 
 - Install redshift manager from bottom right corner
+- Configure terminator to startup with machine
+- Configure loginMode=restorePreviousLogout

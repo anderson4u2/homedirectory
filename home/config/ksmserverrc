@@ -1,6 +1,0 @@
-[General]
-confirmLogout=true
-excludeApps=
-loginMode=restorePreviousLogout
-offerShutdown=true
-shutdownType=0
