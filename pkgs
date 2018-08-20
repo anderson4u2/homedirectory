@@ -3,6 +3,7 @@ direnv
 docker
 docker-compose
 google-cloud-sdk
+htop
 httpie
 i3
 i3-doc
