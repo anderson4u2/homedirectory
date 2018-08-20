@@ -54,7 +54,7 @@ sudo snap install chromium
 sudo snap install bitwarden
 sudo snap install google-play-music-desktop-player
 sudo snap install simplenote
-# sudo snap install slack --classic INSTALL SLACK BY DOWNLOADING, SNAP DOESNT WORK
+sudo snap install slack --classic # It seems snap works with Fedora KDE, yay!
 sudo snap install spotify
 sudo snap install vlc
 
