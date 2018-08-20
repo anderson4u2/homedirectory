@@ -34,9 +34,6 @@ while read pkg; do
   sudo dnf -y install $pkg
 done <pkgs
 
-# Install Oh-My-Zsh
-wget --no-check-certificate http://install.ohmyz.sh -O - | sh
-
 # Add key and install repository for VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
@@ -50,13 +47,11 @@ sudo ln -s /var/lib/snapd/snap /snap
 
 # Installing Snapcraft stuff
 sudo snap install atom --classic
-sudo snap install chromium
 sudo snap install bitwarden
 sudo snap install google-play-music-desktop-player
 sudo snap install simplenote
 sudo snap install slack --classic # It seems snap works with Fedora KDE, yay!
 sudo snap install spotify
-sudo snap install vlc
 
 # Install Keybase
 sudo yum -y install https://prerelease.keybase.io/keybase_amd64.rpm
@@ -66,3 +61,7 @@ run_keybase
 
 # Install minikube, should work for all linux
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.28.2/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+
+# Install Oh-My-Zsh
+wget --no-check-certificate http://install.ohmyz.sh -O - | sh
+# This is going to ask to change shell at end of installation so will exit then
