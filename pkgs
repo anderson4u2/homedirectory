@@ -1,4 +1,5 @@
 calibre
+consul
 direnv
 docker
 docker-compose
