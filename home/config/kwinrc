@@ -2,8 +2,8 @@
 OpenGLIsUnsafe=false
 
 [Desktops]
-Number=4
-Rows=2
+Number=9
+Rows=3
 
 [Plugins]
 cubeslideEnabled=false
