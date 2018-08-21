@@ -4,6 +4,7 @@ consul
 direnv
 docker
 docker-compose
+fuse-exfat
 google-cloud-sdk
 htop
 httpie
