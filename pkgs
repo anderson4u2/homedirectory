@@ -2,9 +2,10 @@ calibre
 chromium
 consul
 direnv
-docker
+docker DO THIS WITH THE DOC IN DOCKER WEBSITE, THIS IS WAY OUT OF DATE (1.13)
 docker-compose
 fuse-exfat
+golang
 google-cloud-sdk
 htop
 httpie
