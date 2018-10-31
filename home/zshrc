@@ -82,7 +82,6 @@ plugins=(
     systemd \
     vagrant \
     virtualenv \
-    z \
 )
 
 
@@ -127,4 +126,12 @@ eval "$(direnv hook zsh)"
 
 # added by Miniconda3 installer
 export PATH="/home/anderson/miniconda3/bin:$PATH"
+
+# GOPATH
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# Virtualenvwrapper
+export WORKON_HOME=~/Code/envs
+source /home/anderson/miniconda3/bin/virtualenvwrapper.sh
 
