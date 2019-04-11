@@ -135,3 +135,4 @@ export PATH=$PATH:$GOPATH/bin
 export WORKON_HOME=~/Code/envs
 source /home/anderson/miniconda3/bin/virtualenvwrapper.sh
 
+# alias kapitan="docker run -t -u $(id -u) --rm -v $(pwd):/src:delegated deepmind/kapitan"
