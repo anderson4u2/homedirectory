@@ -73,6 +73,8 @@ plugins=(
     gpg-agent \
     httpie \
     history \
+    kube-ps1 \
+    kubectl \
     # npm \
     # rbenv \
     pip \
@@ -125,7 +127,7 @@ source $ZSH/oh-my-zsh.sh
 eval "$(direnv hook zsh)"
 
 # added by Miniconda3 installer
-export PATH="/home/anderson/miniconda3/bin:$PATH"
+# export PATH="/home/anderson/miniconda3/bin:$PATH"  # commented out by conda initialize
 
 # GOPATH
 export GOPATH=$HOME/go
@@ -136,3 +138,5 @@ export WORKON_HOME=~/Code/envs
 source /home/anderson/miniconda3/bin/virtualenvwrapper.sh
 
 # alias kapitan="docker run -t -u $(id -u) --rm -v $(pwd):/src:delegated deepmind/kapitan"
+
+PROMPT=$PROMPT'$(kube_ps1) '
