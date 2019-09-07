@@ -12,7 +12,7 @@ gsettings get org.gnome.desktop.wm.preferences focus-mode 'sloppy'
 gsettings get org.gnome.desktop.wm.preferences auto-raise true
 
 # set hostname as Fedora doesn't give it one during installation
-hostnamectl set-hostname x1
+# hostnamectl set-hostname x1
 
 # enable free and non-free 3rd party repos
 sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
