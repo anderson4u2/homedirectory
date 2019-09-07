@@ -15,10 +15,3 @@
     ~/.zshrc:
       path: 'zshrc'
       force: true
-    ~/.config/:
-      glob: true
-      path: config/*
-      relink: true
-      force: true
-    ~/.config/gtk-3.0/gtk.css:                     'gtk.css'
-

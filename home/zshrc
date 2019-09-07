@@ -59,8 +59,9 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    ansible \
     aws \
-    cheat \
+    # cheat \
     # colorize \
     docker\
     docker-compose \
@@ -75,15 +76,23 @@ plugins=(
     history \
     kube-ps1 \
     kubectl \
+    minikube \
     # npm \
     # rbenv \
+    per-directory-history \
     pip \
+    # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pj \
+    pj \
     # pyenv \
     # rsync \
     # rvm \
     systemd \
-    vagrant \
+    terraform \
+    tig \
+    timer \
+    tmux \
     virtualenv \
+    virtualenvwrapper \
 )
 
 
@@ -134,9 +143,23 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # Virtualenvwrapper
-export WORKON_HOME=~/Code/envs
-source /home/anderson/miniconda3/bin/virtualenvwrapper.sh
+# maybe I shouldn't use this?
+export WORKON_HOME=~/envs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# source /home/anderson/miniconda3/bin/virtualenvwrapper.sh
 
+<<<<<<< Updated upstream
 # alias kapitan="docker run -t -u $(id -u) --rm -v $(pwd):/src:delegated deepmind/kapitan"
 
 PROMPT=$PROMPT'$(kube_ps1) '
+=======
+# Tmux stuff
+alias tmux ls
+
+# For ps1
+# https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/kube-ps1
+PROMPT=$PROMPT'$(kube_ps1) '
+
+# For pj (project jump)
+PROJECT_PATHS=(~/work ~/Code/work/infloai ~/Code/work/infloai-devops)
+>>>>>>> Stashed changes
