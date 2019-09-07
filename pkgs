@@ -11,7 +11,6 @@ htop
 httpie
 java-1.8.0-openjdk
 libreoffice
-kapitan
 kubectl
 make
 meld
@@ -25,9 +24,6 @@ ps_mem
 pwgen
 py3status
 python-devel
-python-networkmanager
-python-pip
-python-virtualenv
 python3-neovim
 qbittorrent
 ranger
