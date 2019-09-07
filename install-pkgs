@@ -7,6 +7,10 @@ set -e
 # update packages index
 # sudo dnf update -y
 
+# Gnome config
+gsettings get org.gnome.desktop.wm.preferences focus-mode 'sloppy'
+gsettings get org.gnome.desktop.wm.preferences auto-raise true
+
 # set hostname as Fedora doesn't give it one during installation
 hostnamectl set-hostname x1
 
@@ -53,15 +57,19 @@ sudo snap install simplenote
 sudo snap install slack --classic # It seems snap works with Fedora KDE, yay!
 sudo snap install spotify
 
+# pip install flake8
+pip install virtualenvwrapper
+python3 -m pip install --upgrade pip
+python3 -m pip install jupyter
+
+# Install minikube, should work for all linux
+# https://github.com/kubernetes/minikube/releases
+ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+   && sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
 # Install Keybase
 sudo yum -y install https://prerelease.keybase.io/keybase_amd64.rpm
 run_keybase
-
-# pip install flake8
-pip install virtualenvwrapper
-
-# Install minikube, should work for all linux
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.28.2/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 
 # Install Oh-My-Zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
