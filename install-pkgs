@@ -8,8 +8,8 @@ set -e
 # sudo dnf update -y
 
 # Gnome config
-gsettings get org.gnome.desktop.wm.preferences focus-mode 'sloppy'
-gsettings get org.gnome.desktop.wm.preferences auto-raise true
+gsettings set org.gnome.desktop.wm.preferences focus-mode 'sloppy'
+gsettings set org.gnome.desktop.wm.preferences auto-raise true
 
 # set hostname as Fedora doesn't give it one during installation
 # hostnamectl set-hostname x1
@@ -47,7 +47,7 @@ sudo dnf -y install code
 
 # Install snapd for installing snaps later
 sudo dnf -y install snapd
-sudo ln -s /var/lib/snapd/snap /snap
+sudo ln -sf /var/lib/snapd/snap /snap
 
 # Installing Snapcraft stuff
 sudo snap install atom --classic
@@ -62,7 +62,7 @@ python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade pip
 pip install virtualenvwrapper
 pip install pgcli
-pip install kapitan
+# pip install kapitan
 
 # Install mega nz file syncyng stuff
 source /etc/os-release
