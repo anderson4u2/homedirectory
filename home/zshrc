@@ -148,11 +148,6 @@ export WORKON_HOME=~/envs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 # source /home/anderson/miniconda3/bin/virtualenvwrapper.sh
 
-<<<<<<< Updated upstream
-# alias kapitan="docker run -t -u $(id -u) --rm -v $(pwd):/src:delegated deepmind/kapitan"
-
-PROMPT=$PROMPT'$(kube_ps1) '
-=======
 # Tmux stuff
 alias tmux ls
 
@@ -162,4 +157,3 @@ PROMPT=$PROMPT'$(kube_ps1) '
 
 # For pj (project jump)
 PROJECT_PATHS=(~/work ~/Code/work/infloai ~/Code/work/infloai-devops)
->>>>>>> Stashed changes
