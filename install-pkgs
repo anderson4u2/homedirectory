@@ -53,8 +53,8 @@ pip3 install ps_mem
 # Install mega nz file syncyng stuff
 source /etc/os-release
 
-wget -O /tmp/megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu${VERSION_ID}/amd64/megasync_4.4.0-1.1_amd64.deb
-wget -O /tmp/nautilus-megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu${VERSION_ID}/amd64/nautilus-megasync_3.6.6_amd64.deb
+wget -O /tmp/megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu_${VERSION_ID}/amd64/megasync_4.4.0-1.1_amd64.deb
+wget -O /tmp/nautilus-megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu_${VERSION_ID}/amd64/nautilus-megasync_3.6.6_amd64.deb
 
 sudo apt install /tmp/megasync_amd64.deb
 sudo apt install /tmp/nautilus-megasync_amd64.deb
