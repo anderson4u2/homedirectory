@@ -56,8 +56,8 @@ source /etc/os-release
 wget -O /tmp/megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu_${VERSION_ID}/amd64/megasync_4.4.0-1.1_amd64.deb
 wget -O /tmp/nautilus-megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu_${VERSION_ID}/amd64/nautilus-megasync_3.6.6_amd64.deb
 
-sudo apt install /tmp/megasync_amd64.deb
-sudo apt install /tmp/nautilus-megasync_amd64.deb
+sudo apt install -y /tmp/megasync_amd64.deb
+sudo apt install -y /tmp/nautilus-megasync_amd64.deb
 
 
 # Install minikube, should work for all linux
