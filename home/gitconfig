@@ -1,5 +1,7 @@
 [user]
 	name = Anderson Silva
-	email = anderson.s@inflo.ai
+	email = hello@anderson.codes
 [core]
 	excludesfile = /home/anderson/.gitignore
+[push]
+	default = current
