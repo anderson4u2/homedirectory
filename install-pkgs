@@ -5,80 +5,78 @@ set -x
 set -e
 
 # update packages index
-# sudo dnf update -y
+sudo apt update -y
 
 # Gnome config
-gsettings set org.gnome.desktop.wm.preferences focus-mode 'sloppy'
-gsettings set org.gnome.desktop.wm.preferences auto-raise true
+# gsettings set org.gnome.desktop.wm.preferences focus-mode 'sloppy'
+# gsettings set org.gnome.desktop.wm.preferences auto-raise true
 
-# set hostname as Fedora doesn't give it one during installation
+# set hostname if it is not given one during installation
 # hostnamectl set-hostname x1
 
-# enable free and non-free 3rd party repos
-sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
 # INSTALLING GCLOUD THE GOOGLE WAY
-# https://cloud.google.com/sdk/docs/downloads-yum
+# https://cloud.google.com/sdk/docs/install#deb
 # Need to do `cloud-init` after this is all done
 
-sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
-[google-cloud-sdk]
-name=Google Cloud SDK
-baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
-       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-EOM
+# 1. Add the Cloud SDK distribution URI as a package source:
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+
+# 2. Import the Google Cloud public key:
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+
+# 3. Update and install the Cloud SDK:
+sudo apt-get update && sudo apt-get install google-cloud-sdk
 
 # END OF INSTALLING GCLOUD THE GOOGLE WAY
 
+# For KUBECTL
+sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+
 while read pkg; do
-  sudo dnf -y install $pkg
+  sudo apt -y install $pkg
 done <pkgs
 
 # Add key and install repository for VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-# Update dnf and install vscode
-dnf check-update | true
-sudo dnf -y install code
-
-# Install snapd for installing snaps later
-sudo dnf -y install snapd
-sudo ln -sf /var/lib/snapd/snap /snap
 
 # Installing Snapcraft stuff
-sudo snap install atom --classic
+sudo snap install code --classic
 sudo snap install bitwarden
-sudo snap install google-play-music-desktop-player
-sudo snap install simplenote
-sudo snap install slack --classic # It seems snap works with Fedora KDE, yay!
+sudo snap install slack --classic
 sudo snap install spotify
 
-# pip install flake8
 python3 -m pip install --upgrade pip
-python3 -m pip install --upgrade pip
-pip install virtualenvwrapper
-pip install pgcli
-# pip install kapitan
+# TODO: pip install virtualenvwrapper
+# TODO: pip install pgcli
+pip3 install --upgrade kapitan
 
 # Install mega nz file syncyng stuff
 source /etc/os-release
 
-wget https://mega.nz/linux/MEGAsync/Fedora_${VERSION_ID}/x86_64/megasync-Fedora_${VERSION_ID}.x86_64.rpm
-wget https://mega.nz/linux/MEGAsync/Fedora_${VERSION_ID}/x86_64/nautilus-megasync-Fedora_${VERSION_ID}.x86_64.rpm
+wget -O /tmp/megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu${VERSION_ID}/amd64/megasync_4.4.0-1.1_amd64.deb
+wget -O /tmp/nautilus-megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu${VERSION_ID}/amd64/nautilus-megasync_3.6.6_amd64.deb
+
+sudo apt install /tmp/megasync_amd64.deb
+sudo apt install /tmp/nautilus-megasync_amd64.deb
+
 
 # Install minikube, should work for all linux
 # https://github.com/kubernetes/minikube/releases
  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
    && sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
+# Install chrome
+wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i /tmp/chrome.deb
+# sudo apt -f install
+
 # Install Keybase
-sudo yum -y install https://prerelease.keybase.io/keybase_amd64.rpm
+wget -O /tmp/keybase_amd64.deb https://prerelease.keybase.io/keybase_amd64.deb
+sudo apt install /tmp/keybase_amd64.deb
 run_keybase
 
-# Install Oh-My-Zsh
-wget --no-check-certificate http://install.ohmyz.sh -O - | sh
-# This is going to ask to change shell at end of installation so will exit then
+# TODO: java openjdk?
