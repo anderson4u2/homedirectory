@@ -45,7 +45,6 @@ sudo snap install bitwarden
 sudo snap install slack --classic
 sudo snap install spotify
 
-python3 -m pip install --upgrade pip
 # TODO: pip install virtualenvwrapper
 # TODO: pip install pgcli
 pip3 install --upgrade kapitan
