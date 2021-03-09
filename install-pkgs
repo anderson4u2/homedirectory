@@ -25,7 +25,7 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 
 # 3. Update and install the Cloud SDK:
-sudo apt-get update && sudo apt-get install google-cloud-sdk
+sudo apt-get update && sudo apt-get install -y google-cloud-sdk
 
 # END OF INSTALLING GCLOUD THE GOOGLE WAY
 
@@ -53,6 +53,7 @@ python3 -m pip install --upgrade pip
 # TODO: pip install virtualenvwrapper
 # TODO: pip install pgcli
 pip3 install --upgrade kapitan
+pip3 install ps_mem
 
 # Install mega nz file syncyng stuff
 source /etc/os-release
