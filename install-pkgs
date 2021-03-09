@@ -72,7 +72,7 @@ sudo dpkg -i /tmp/chrome.deb
 
 # Install Keybase
 wget -O /tmp/keybase_amd64.deb https://prerelease.keybase.io/keybase_amd64.deb
-sudo apt install /tmp/keybase_amd64.deb
+sudo apt install -y /tmp/keybase_amd64.deb
 run_keybase
 
 # TODO: java openjdk?
