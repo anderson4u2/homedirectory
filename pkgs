@@ -2,7 +2,6 @@ calibre
 direnv
 git-extras
 gnome-tweaks
-golang
 htop
 httpie
 openjdk-8-jre
