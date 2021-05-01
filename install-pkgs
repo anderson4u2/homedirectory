@@ -40,8 +40,11 @@ while read pkg; do
 done <pkgs
 
 # Installing Snapcraft stuff
-sudo snap install code --classic
 sudo snap install bitwarden
+sudo snap install code --classic
+sudo snap install gitkraken --classic
+sudo snap install postman
+sudo snap install signal-desktop
 sudo snap install slack --classic
 sudo snap install spotify
 
@@ -49,30 +52,3 @@ sudo snap install spotify
 # TODO: pip install pgcli
 pip3 install --upgrade kapitan
 pip3 install ps_mem
-
-# Install mega nz file syncyng stuff
-source /etc/os-release
-
-wget -O /tmp/megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu_${VERSION_ID}/amd64/megasync_4.4.0-1.1_amd64.deb
-wget -O /tmp/nautilus-megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu_${VERSION_ID}/amd64/nautilus-megasync_3.6.6_amd64.deb
-
-sudo apt install -y /tmp/megasync_amd64.deb
-sudo apt install -y /tmp/nautilus-megasync_amd64.deb
-
-
-# Install minikube, should work for all linux
-# https://github.com/kubernetes/minikube/releases
- curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
-   && sudo install minikube-linux-amd64 /usr/local/bin/minikube
-
-# Install chrome
-wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i /tmp/chrome.deb
-# sudo apt -f install
-
-# Install Keybase
-wget -O /tmp/keybase_amd64.deb https://prerelease.keybase.io/keybase_amd64.deb
-sudo apt install -y /tmp/keybase_amd64.deb
-run_keybase
-
-# TODO: java openjdk?

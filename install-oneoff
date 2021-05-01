@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+set -x
+
+set -e
+
+# Install mega nz file syncyng stuff
+source /etc/os-release
+
+wget -O /tmp/megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu_${VERSION_ID}/amd64/megasync_4.4.0-1.1_amd64.deb
+wget -O /tmp/nautilus-megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu_${VERSION_ID}/amd64/nautilus-megasync_3.6.6_amd64.deb
+
+sudo apt install -y /tmp/megasync_amd64.deb
+sudo apt install -y /tmp/nautilus-megasync_amd64.deb
+
+# Install minikube, should work for all linux
+# https://github.com/kubernetes/minikube/releases
+ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+   && sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+# Install chrome
+wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i /tmp/chrome.deb
+# sudo apt -f install
+
+# Install Keybase
+wget -O /tmp/keybase_amd64.deb https://prerelease.keybase.io/keybase_amd64.deb
+sudo apt install -y /tmp/keybase_amd64.deb
+run_keybase
+
+# Poetry for ohmyzsh
+# https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh
+mkdir $ZSH_CUSTOM/plugins/poetry
+poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
+
+# zoom
+wget -P /tmp https://zoom.us/client/latest/zoom_amd64.deb
+sudo apt install /tmp/zoom_amd64.deb -y
+
+# JetBrains Toolbox
+wget -P /tmp https://download-cf.jetbrains.com/toolbox/jetbrains-toolbox-1.20.8352.tar.gz
+tar -xvzf /tmp/jetbrains-toolbox-1.20.8352.tar.gz -C /tmp
+sudo mv /tmp/jetbrains-toolbox-1.20.8352/jetbrains-toolbox /usr/local/bin/
+
+# TODO: java openjdk?
