@@ -51,4 +51,4 @@ sudo snap install spotify
 # TODO: pip install virtualenvwrapper
 # TODO: pip install pgcli
 pip3 install --upgrade kapitan
-pip3 install ps_mem
+sudo pip3 install ps_mem
