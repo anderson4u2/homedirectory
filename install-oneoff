@@ -28,6 +28,8 @@ wget -O /tmp/keybase_amd64.deb https://prerelease.keybase.io/keybase_amd64.deb
 sudo apt install -y /tmp/keybase_amd64.deb
 run_keybase
 
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+source ~/.zshrc
 # Poetry for ohmyzsh
 # https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh
 mkdir $ZSH_CUSTOM/plugins/poetry
