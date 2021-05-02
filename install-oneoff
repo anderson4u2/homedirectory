@@ -15,8 +15,8 @@ sudo apt install -y /tmp/nautilus-megasync_amd64.deb
 
 # Install minikube, should work for all linux
 # https://github.com/kubernetes/minikube/releases
- curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
-   && sudo install minikube-linux-amd64 /usr/local/bin/minikube
+wget -P /tmp https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+  && sudo install /tmp/minikube-linux-amd64 /usr/local/bin/minikube
 
 # Install chrome
 wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
