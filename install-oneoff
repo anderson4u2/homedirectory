@@ -43,3 +43,6 @@ tar -xvzf /tmp/jetbrains-toolbox-1.20.8352.tar.gz -C /tmp
 sudo mv /tmp/jetbrains-toolbox-1.20.8352/jetbrains-toolbox /usr/local/bin/
 
 # TODO: java openjdk?
+
+# calibre book management
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
