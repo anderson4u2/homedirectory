@@ -43,6 +43,7 @@ sudo apt install /tmp/zoom_amd64.deb -y
 wget -P /tmp https://download-cf.jetbrains.com/toolbox/jetbrains-toolbox-1.20.8352.tar.gz
 tar -xvzf /tmp/jetbrains-toolbox-1.20.8352.tar.gz -C /tmp
 sudo mv /tmp/jetbrains-toolbox-1.20.8352/jetbrains-toolbox /usr/local/bin/
+jetbrains-toolbox
 
 # TODO: java openjdk?
 
