@@ -178,3 +178,5 @@ export PATH=$PATH:$HOME/.poetry/bin
 source <(kubectl completion zsh)
 fpath=($fpath ~/.zsh/completion)
 
+# git workspace
+export GIT_WORKSPACE=~/Code
