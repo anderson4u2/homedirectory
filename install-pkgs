@@ -40,6 +40,7 @@ while read pkg; do
 done <pkgs
 
 # Installing Snapcraft stuff
+sudo snap install authy --beta
 sudo snap install bitwarden
 sudo snap install code --classic
 sudo snap install discord
