@@ -15,8 +15,8 @@ sudo apt install -y /tmp/nautilus-megasync_amd64.deb
 
 # Install minikube, should work for all linux
 # https://github.com/kubernetes/minikube/releases
- curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
-   && sudo install minikube-linux-amd64 /usr/local/bin/minikube
+wget -P /tmp https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+  && sudo install /tmp/minikube-linux-amd64 /usr/local/bin/minikube
 
 # Install chrome
 wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -28,6 +28,8 @@ wget -O /tmp/keybase_amd64.deb https://prerelease.keybase.io/keybase_amd64.deb
 sudo apt install -y /tmp/keybase_amd64.deb
 run_keybase
 
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+source ~/.zshrc
 # Poetry for ohmyzsh
 # https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh
 mkdir $ZSH_CUSTOM/plugins/poetry
@@ -41,5 +43,9 @@ sudo apt install /tmp/zoom_amd64.deb -y
 wget -P /tmp https://download-cf.jetbrains.com/toolbox/jetbrains-toolbox-1.20.8352.tar.gz
 tar -xvzf /tmp/jetbrains-toolbox-1.20.8352.tar.gz -C /tmp
 sudo mv /tmp/jetbrains-toolbox-1.20.8352/jetbrains-toolbox /usr/local/bin/
+jetbrains-toolbox
 
 # TODO: java openjdk?
+
+# calibre book management
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
