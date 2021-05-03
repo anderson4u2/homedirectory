@@ -50,6 +50,9 @@ sudo snap install signal-desktop
 sudo snap install slack --classic
 sudo snap install spotify
 
+# https://github.com/cloudflare/cfssl
+go get -u github.com/cloudflare/cfssl/cmd/...
+
 # TODO: pip install virtualenvwrapper
 # TODO: pip install pgcli
 pip3 install --upgrade kapitan
