@@ -51,20 +51,7 @@ sudo snap install signal-desktop
 sudo snap install slack --classic
 sudo snap install spotify
 
-# https://github.com/cloudflare/cfssl
-# go get -u github.com/cloudflare/cfssl/cmd/...
-# go get: github.com/coreos/bbolt@v1.3.2 updating to
-# 	github.com/coreos/bbolt@v1.3.5: parsing go.mod:
-# 	module declares its path as: go.etcd.io/bbolt
-# 	        but was required as: github.com/coreos/bbolt
-VERSION=$(curl --silent "https://api.github.com/repos/cloudflare/cfssl/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
-VNUMBER=${VERSION#"v"}
-wget "https://github.com/cloudflare/cfssl/releases/download/${VERSION}/cfssl_${VNUMBER}_linux_amd64" -O cfssl
-chmod +x cfssl
-sudo mv cfssl /usr/local/bin
-wget "https://github.com/cloudflare/cfssl/releases/download/${VERSION}/cfssljson_${VNUMBER}_linux_amd64" -O cfssljson
-chmod +x cfssljson
-sudo mv cfssljson /usr/local/bin
+sudo snap refresh
 
 # TODO: pip install virtualenvwrapper
 # TODO: pip install pgcli
