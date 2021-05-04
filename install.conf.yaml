@@ -12,6 +12,7 @@
     ~/.gitconfig:                                  'gitconfig'
     ~/.gitignore:                                  'gitignore'
     ~/.config/terminator/config:                   'terminator.cfg'
+    ~/.doddle-auth.sh:                             'doddle-auth.sh'
     ~/.zshrc:
       path: 'zshrc'
       force: true
