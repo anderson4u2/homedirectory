@@ -68,5 +68,5 @@ sudo mv cfssljson /usr/local/bin
 
 # TODO: pip install virtualenvwrapper
 # TODO: pip install pgcli
-pip3 install --upgrade kapitan
+pip3 install kapitan==0.28.0 --user
 sudo pip3 install ps_mem
