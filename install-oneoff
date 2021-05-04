@@ -49,3 +49,6 @@ jetbrains-toolbox
 
 # calibre book management
 sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+
+# node stuff
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.38.0/install.sh | bash

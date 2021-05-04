@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -x
+
+set -e
+
+nvm install 14.16
+nvm install 12.14
+
+nvm alias default 12.14
