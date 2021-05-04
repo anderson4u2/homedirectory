@@ -8,10 +8,9 @@
     '~'
 
 - link:
-    ~/.ssh:                                        '/keybase/private/andersonsilva/home/ssh'
+    ~/.ssh:                                        '/Volumes/Keybase/private/andersonsilva/home/ssh'
     ~/.gitconfig:                                  'gitconfig'
     ~/.gitignore:                                  'gitignore'
-    ~/.config/terminator/config:                   'terminator.cfg'
     ~/.zshrc:
       path: 'zshrc'
       force: true

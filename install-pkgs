@@ -4,81 +4,57 @@ set -x
 
 set -e
 
-# update packages index
-# sudo dnf update -y
-
-# Gnome config
-gsettings set org.gnome.desktop.wm.preferences focus-mode 'sloppy'
-gsettings set org.gnome.desktop.wm.preferences auto-raise true
-
-# set hostname as Fedora doesn't give it one during installation
-# hostnamectl set-hostname x1
-
-# enable free and non-free 3rd party repos
-sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-# INSTALLING GCLOUD THE GOOGLE WAY
-# https://cloud.google.com/sdk/docs/downloads-yum
-# Need to do `cloud-init` after this is all done
-
-sudo tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
-[google-cloud-sdk]
-name=Google Cloud SDK
-baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
-       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-EOM
-
-# END OF INSTALLING GCLOUD THE GOOGLE WAY
+brew update
+brew tap homebrew/cask-drivers
 
 while read pkg; do
-  sudo dnf -y install $pkg
-done <pkgs
+  if test ! $(which pkg); then
+    echo "Installing $pkg"
+    brew install $pkg
+  fi
+done <pkgs-mac
 
-# Add key and install repository for VSCode
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-# Update dnf and install vscode
-dnf check-update | true
-sudo dnf -y install code
+while read cask; do
+  if test ! $(which cask); then
+    echo "Installing cask $cask"
+    brew cask install $cask
+  fi
+done <pkgs-mac-cask
 
-# Install snapd for installing snaps later
-sudo dnf -y install snapd
-sudo ln -sf /var/lib/snapd/snap /snap
+brew cleanup
 
-# Installing Snapcraft stuff
-sudo snap install atom --classic
-sudo snap install bitwarden
-sudo snap install google-play-music-desktop-player
-sudo snap install simplenote
-sudo snap install slack --classic # It seems snap works with Fedora KDE, yay!
-sudo snap install spotify
-
-# pip install flake8
-python3 -m pip install --upgrade pip
-python3 -m pip install --upgrade pip
-pip install virtualenvwrapper
-pip install pgcli
-# pip install kapitan
-
-# Install mega nz file syncyng stuff
-source /etc/os-release
-
-wget https://mega.nz/linux/MEGAsync/Fedora_${VERSION_ID}/x86_64/megasync-Fedora_${VERSION_ID}.x86_64.rpm
-wget https://mega.nz/linux/MEGAsync/Fedora_${VERSION_ID}/x86_64/nautilus-megasync-Fedora_${VERSION_ID}.x86_64.rpm
+pip3 install flake8
+pip3 install kapitan
+pip3 install pgcli
+pip3 install ps_mem
 
 # Install minikube, should work for all linux
 # https://github.com/kubernetes/minikube/releases
- curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
-   && sudo install minikube-linux-amd64 /usr/local/bin/minikube
-
+# curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
 # Install Keybase
-sudo yum -y install https://prerelease.keybase.io/keybase_amd64.rpm
-run_keybase
 
 # Install Oh-My-Zsh
-wget --no-check-certificate http://install.ohmyz.sh -O - | sh
-# This is going to ask to change shell at end of installation so will exit then
+#wget --no-check-certificate http://install.ohmyz.sh -O - | sh
+
+# https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
+
+if test ! $(which session-manager-plugin); then
+  curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/mac/sessionmanager-bundle.zip" -o "sessionmanager-bundle.zip"
+  unzip sessionmanager-bundle.zip
+  sudo ./sessionmanager-bundle/install -i /usr/local/sessionmanagerplugin -b /usr/local/bin/session-manager-plugin
+fi
+
+
+# after install virtualbox and kubectl will need:
+# brew install minikube
+
+# Install poetry
+# https://python-poetry.org/docs/#installation
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+
+# Install autocompletion
+source ~/.zshrc
+mkdir $ZSH/plugins/poetry
+poetry completions zsh > $ZSH/plugins/poetry/_poetry
+
+sudo snap install kontena-lens --classic
