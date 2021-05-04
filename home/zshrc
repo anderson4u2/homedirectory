@@ -158,6 +158,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 alias kx='kubectx'
+alias kn='kubens'
 alias kg='kgp --all-namespaces | grep '
 function kgl() {
   kgp --all-namespaces -l app=$1
