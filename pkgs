@@ -2,6 +2,7 @@ awscli
 calibre
 direnv
 evolution-ews
+fzf
 git-extras
 gnome-tweaks
 htop
