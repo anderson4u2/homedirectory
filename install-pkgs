@@ -70,14 +70,3 @@ sudo mv cfssljson /usr/local/bin
 # TODO: pip install pgcli
 pip3 install --upgrade kapitan
 sudo pip3 install ps_mem
-
-# homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# https://docs.brew.sh/Homebrew-on-Linux
-test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-
-brew tap orf/brew
-brew install git-workspace
