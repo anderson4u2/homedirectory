@@ -10,6 +10,7 @@
 - link:
     ~/.ssh:                                        '/keybase/private/andersonsilva/home/ssh'
     ~/.gitconfig:                                  'gitconfig'
+    ~/.gitconfig-doddle:                           'gitconfig-doddle'
     ~/.gitignore:                                  'gitignore'
     ~/.config/terminator/config:                   'terminator.cfg'
     ~/.doddle-auth.sh:                             'doddle-auth.sh'
