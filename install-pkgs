@@ -44,6 +44,7 @@ sudo snap install authy --beta
 sudo snap install bitwarden
 sudo snap install code --classic
 sudo snap install discord
+sudo snap install flameshot
 sudo snap install gitkraken --classic
 sudo snap install go --classic
 sudo snap install postman
