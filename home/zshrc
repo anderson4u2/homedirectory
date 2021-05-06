@@ -188,4 +188,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # Doddle
 
+alias doddle='~/Code/github/doddle'
 alias ddauth='~/.doddle-auth.sh'
