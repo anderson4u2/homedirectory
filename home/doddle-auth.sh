@@ -7,8 +7,8 @@ set -eux
 
 # doddle-auth --cluster play.tooling
 doddle-auth --cluster main.tooling
-doddle-auth --cluster main.eu-staging
 doddle-auth --cluster main.eu-preprod
 doddle-auth --cluster main.apac-preprod
 doddle-auth --cluster main.eu-prod
 doddle-auth --cluster main.apac-prod
+doddle-auth --cluster main.eu-staging
