@@ -157,6 +157,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
+alias gl='git pull origin $(git_current_branch)'
 alias kx='kubectx'
 alias kn='kubens'
 alias kg='kgp --all-namespaces | grep '
