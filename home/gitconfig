@@ -7,7 +7,7 @@
 [push]
 	default = current
 [pull]
-  ff = only
+	ff = only
 [commit]
 	gpgsign = true
 [url "git@github.com:"]
