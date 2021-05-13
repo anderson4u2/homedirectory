@@ -8,6 +8,8 @@
 	default = current
 [pull]
 	ff = only
+[fetch]
+	prune = true
 [commit]
 	gpgsign = true
 [url "git@github.com:"]
