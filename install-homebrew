@@ -15,3 +15,4 @@ echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
 brew tap orf/brew
 brew install git-workspace
 brew install kubectx
+brew install k9s
