@@ -17,3 +17,4 @@ brew install git-workspace
 brew install kubectx
 brew install k9s
 brew install warrensbox/tap/tfswitch
+brew install bat
