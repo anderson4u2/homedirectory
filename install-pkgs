@@ -53,7 +53,6 @@ sudo snap install postman
 sudo snap install signal-desktop
 sudo snap install slack --classic
 sudo snap install spotify
-sudo snap install tfswitch
 
 sudo snap refresh
 
