@@ -17,6 +17,7 @@ brew install git-workspace
 
 brew install awscli
 brew install bat
+brew install jupyterlab # npm install -g ijavascript; ijsinstall
 brew install kubectx
 brew install k9s
 brew install warrensbox/tap/tfswitch
