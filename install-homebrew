@@ -20,4 +20,5 @@ brew install bat
 brew install jupyterlab # npm install -g ijavascript; ijsinstall
 brew install kubectx
 brew install k9s
+brew install stern
 brew install warrensbox/tap/tfswitch
