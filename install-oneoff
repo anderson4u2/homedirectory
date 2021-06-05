@@ -16,18 +16,23 @@ wget -P /tmp https://storage.googleapis.com/minikube/releases/latest/minikube-li
 sudo dnf install https://prerelease.keybase.io/keybase_amd64.rpm -y
 run_keybase
 
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
-source ~/.zshrc
-# Poetry for ohmyzsh
-# https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh
-mkdir $ZSH_CUSTOM/plugins/poetry
-poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
-
 # JetBrains Toolbox
-wget -P /tmp https://download-cf.jetbrains.com/toolbox/jetbrains-toolbox-1.20.8352.tar.gz
-tar -xvzf /tmp/jetbrains-toolbox-1.20.8352.tar.gz -C /tmp
-sudo mv /tmp/jetbrains-toolbox-1.20.8352/jetbrains-toolbox /usr/local/bin/
-jetbrains-toolbox
+# Reference: https://github.com/nagygergo/jetbrains-toolbox-install/blob/master/jetbrains-toolbox.sh
+# Note that we grep for linux here, if you are using this on mac/windows please see json output
+TOOLBOX_URL=$(curl --silent 'https://data.services.jetbrains.com//products/releases?code=TBA&latest=true&type=release' \
+    -H 'Origin: https://www.jetbrains.com' \
+    -H 'Accept-Encoding: gzip, deflate, br' \
+    -H 'Accept-Language: en-US,en;q=0.8' \
+    -H 'Accept: application/json, text/javascript, */*; q=0.01' \
+    -H 'Referer: https://www.jetbrains.com/toolbox/download/' \
+    -H 'Connection: keep-alive' \
+    -H 'DNT: 1' \
+    --compressed \
+  | grep -Po '"linux":.*?[^\\]",' \
+  | awk -F ':' '{print $3,":"$4}'| sed 's/[", ]//g')
+
+install -d ${HOME}/bin
+curl -sL ${TOOLBOX_URL} | tar xvz --directory=${HOME}/bin --strip-components=1
 
 # TODO: java openjdk?
 
