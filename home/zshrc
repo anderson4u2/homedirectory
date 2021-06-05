@@ -2,32 +2,38 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-ZSH=/home/anderson/.oh-my-zsh/
+export ZSH=/home/anderson/.oh-my-zsh/
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -48,13 +54,17 @@ DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
@@ -71,7 +81,7 @@ plugins=(
     # git-extras \
     # github \
     golang \
-    gpg-agent \
+    # gpg-agent \
     httpie \
     history \
     kube-ps1 \
@@ -79,10 +89,11 @@ plugins=(
     minikube \
     # npm \
     # rbenv \
-    per-directory-history \
+    # per-directory-history \
     pip \
     # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/pj \
-    pj \
+    # pj \
+    poetry \
     # pyenv \
     # rsync \
     # rvm \
@@ -92,9 +103,10 @@ plugins=(
     timer \
     tmux \
     virtualenv \
-    virtualenvwrapper \
+    # virtualenvwrapper \
 )
 
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -113,9 +125,6 @@ plugins=(
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -125,35 +134,67 @@ plugins=(
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir $ZSH_CACHE_DIR
-fi
-
-source $ZSH/oh-my-zsh.sh
-
 # Need this for direnv
 eval "$(direnv hook zsh)"
-
-# added by Miniconda3 installer
-# export PATH="/home/anderson/miniconda3/bin:$PATH"  # commented out by conda initialize
 
 # GOPATH
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-
-# Virtualenvwrapper
-# maybe I shouldn't use this?
-export WORKON_HOME=~/envs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-# source /home/anderson/miniconda3/bin/virtualenvwrapper.sh
-
-# Tmux stuff
-alias tmux ls
 
 # For ps1
 # https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/kube-ps1
 PROMPT=$PROMPT'$(kube_ps1) '
 
 # For pj (project jump)
-PROJECT_PATHS=(~/work ~/Code/work/infloai ~/Code/work/infloai-devops)
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pj
+# PROJECT_PATHS=(~/work ~/Code/work/infloai ~/Code/work/infloai-devops)
+
+# Virtualenvwrapper
+# maybe I shouldn't use this?
+export WORKON_HOME=~/envs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# source /Users/anderson.silva/Library/Python/3.7/bin/virtualenvwrapper.sh
+
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+# https://joshtronic.com/2020/08/09/how-to-get-the-default-git-branch/
+alias gl='git pull origin $(git_current_branch)'
+git_default_branch() {
+  (git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') 2>/dev/null
+}
+alias gcm='git checkout $(git_default_branch)'
+alias gmm='git merge $(git_default_branch)'
+
+alias kx='kubectx'
+alias kn='kubens'
+alias kg='kgp --all-namespaces | grep '
+function kgl() {
+  kgp --all-namespaces -l app=$1
+}
+
+# Poetry
+export PATH=$PATH:$HOME/.poetry/bin
+
+# alias fido='cd /Users/anderson.silva/Repos/gitlab/onfido'
+# alias devops='/Users/anderson.silva/Repos/gitlab/onfido/devops'
+
+# The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/Users/anderson.silva/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/anderson.silva/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+# if [ -f '/Users/anderson.silva/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/anderson.silva/google-cloud-sdk/completion.zsh.inc'; fi
+
+source <(kubectl completion zsh)
+fpath=($fpath ~/.zsh/completion)
+
+# git workspace
+export GIT_WORKSPACE=~/Code
+
+# nodejs stuff
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Doddle
+
+alias ddcode='~/Code/github/doddle'
+alias ddauth='~/.doddle-auth.sh'
