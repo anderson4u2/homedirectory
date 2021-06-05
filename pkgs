@@ -24,6 +24,7 @@ nload
 postgresql-contrib
 postgresql-devel
 perl-Time-HiRes
+poetry
 powertop
 ps_mem
 pwgen
