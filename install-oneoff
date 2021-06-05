@@ -7,8 +7,8 @@ set -e
 # Install mega nz file syncyng stuff
 source /etc/os-release
 
-wget -O /tmp/megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu_${VERSION_ID}/amd64/megasync_4.4.0-1.1_amd64.deb
-wget -O /tmp/nautilus-megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu_${VERSION_ID}/amd64/nautilus-megasync_3.6.6_amd64.deb
+wget https://mega.nz/linux/MEGAsync/Fedora_${VERSION_ID}/x86_64/megasync-Fedora_${VERSION_ID}.x86_64.rpm
+wget https://mega.nz/linux/MEGAsync/Fedora_${VERSION_ID}/x86_64/nautilus-megasync-Fedora_${VERSION_ID}.x86_64.rpm
 
 sudo apt install -y /tmp/megasync_amd64.deb
 sudo apt install -y /tmp/nautilus-megasync_amd64.deb
