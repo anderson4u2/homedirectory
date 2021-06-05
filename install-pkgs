@@ -50,7 +50,7 @@ sudo dnf -y install snapd
 sudo ln -sf /var/lib/snapd/snap /snap
 
 # Installing Snapcraft stuff
-sudo snap install authy --beta
+sudo snap install authy
 sudo snap install bitwarden
 sudo snap install discord
 sudo snap install flameshot
