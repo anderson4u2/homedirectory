@@ -1,8 +1,11 @@
+awscli
+bat
 calibre
 chromium
 conda
 direnv
-fuse-exfat
+evolution-ews
+fzf
 git-extras
 gnome-tweaks
 golang
