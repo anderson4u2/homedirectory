@@ -1,5 +1,19 @@
 [user]
 	name = Anderson Silva
-	email = anderson.s@inflo.ai
+	email = hello@anderson.codes
+	signingkey = ADA6CCD96F15F43735993380969D9A0A2A2824A9
 [core]
 	excludesfile = /home/anderson/.gitignore
+[push]
+	default = current
+[pull]
+	ff = only
+[fetch]
+	prune = true
+[commit]
+	gpgsign = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[includeIf "gitdir:~/Code/github/doddle/"]
+	path = ~/.gitconfig-doddle
