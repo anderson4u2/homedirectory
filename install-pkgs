@@ -8,8 +8,8 @@ set -e
 # sudo dnf update -y
 
 # Gnome config
-gsettings set org.gnome.desktop.wm.preferences focus-mode 'sloppy'
-gsettings set org.gnome.desktop.wm.preferences auto-raise true
+# gsettings set org.gnome.desktop.wm.preferences focus-mode 'sloppy'
+# gsettings set org.gnome.desktop.wm.preferences auto-raise true
 
 # set hostname as Fedora doesn't give it one during installation
 # hostnamectl set-hostname x1
@@ -50,9 +50,17 @@ sudo dnf -y install snapd
 sudo ln -sf /var/lib/snapd/snap /snap
 
 # Installing Snapcraft stuff
-sudo snap install atom --classic
+sudo snap install authy --beta
 sudo snap install bitwarden
+sudo snap install discord
+sudo snap install flameshot
+sudo snap install gitkraken --classic
 sudo snap install google-play-music-desktop-player
+sudo snap install helm --classic
+sudo snap install kontena-lens --classic
+sudo snap install postman
+sudo snap install signal-desktop
+sudo snap install slack --classic
 sudo snap install simplenote
 sudo snap install slack --classic # It seems snap works with Fedora KDE, yay!
 sudo snap install spotify
@@ -64,20 +72,6 @@ pip install virtualenvwrapper
 pip install pgcli
 # pip install kapitan
 
-# Install mega nz file syncyng stuff
-source /etc/os-release
-
-wget https://mega.nz/linux/MEGAsync/Fedora_${VERSION_ID}/x86_64/megasync-Fedora_${VERSION_ID}.x86_64.rpm
-wget https://mega.nz/linux/MEGAsync/Fedora_${VERSION_ID}/x86_64/nautilus-megasync-Fedora_${VERSION_ID}.x86_64.rpm
-
-# Install minikube, should work for all linux
-# https://github.com/kubernetes/minikube/releases
- curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
-   && sudo install minikube-linux-amd64 /usr/local/bin/minikube
-
-# Install Keybase
-sudo yum -y install https://prerelease.keybase.io/keybase_amd64.rpm
-run_keybase
 
 # Install Oh-My-Zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
