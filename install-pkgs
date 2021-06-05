@@ -64,6 +64,7 @@ sudo snap install slack --classic
 sudo snap install simplenote
 sudo snap install slack --classic # It seems snap works with Fedora KDE, yay!
 sudo snap install spotify
+sudo snap install zoom-client
 
 # pip install flake8
 python3 -m pip install --upgrade pip
