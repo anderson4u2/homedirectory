@@ -16,7 +16,9 @@ java-1.8.0-openjdk
 libreoffice
 kubectl
 make
+megasync
 meld
+nautilus-megasync
 neovim
 nload
 postgresql-contrib
