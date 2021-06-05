@@ -7,12 +7,6 @@ set -e
 # Install mega nz file syncyng stuff
 source /etc/os-release
 
-wget https://mega.nz/linux/MEGAsync/Fedora_${VERSION_ID}/x86_64/megasync-Fedora_${VERSION_ID}.x86_64.rpm
-wget https://mega.nz/linux/MEGAsync/Fedora_${VERSION_ID}/x86_64/nautilus-megasync-Fedora_${VERSION_ID}.x86_64.rpm
-
-sudo apt install -y /tmp/megasync_amd64.deb
-sudo apt install -y /tmp/nautilus-megasync_amd64.deb
-
 # Install minikube, should work for all linux
 # https://github.com/kubernetes/minikube/releases
 wget -P /tmp https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
@@ -28,10 +22,6 @@ source ~/.zshrc
 # https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh
 mkdir $ZSH_CUSTOM/plugins/poetry
 poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
-
-# zoom
-wget -P /tmp https://zoom.us/client/latest/zoom_amd64.deb
-sudo apt install /tmp/zoom_amd64.deb -y
 
 # JetBrains Toolbox
 wget -P /tmp https://download-cf.jetbrains.com/toolbox/jetbrains-toolbox-1.20.8352.tar.gz
