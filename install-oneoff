@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+set -x
+
+set -e
+
+# Install mega nz file syncyng stuff
+source /etc/os-release
+
+wget -O /tmp/megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu_${VERSION_ID}/amd64/megasync_4.4.0-1.1_amd64.deb
+wget -O /tmp/nautilus-megasync_amd64.deb https://mega.nz/linux/MEGAsync/xUbuntu_${VERSION_ID}/amd64/nautilus-megasync_3.6.6_amd64.deb
+
+sudo apt install -y /tmp/megasync_amd64.deb
+sudo apt install -y /tmp/nautilus-megasync_amd64.deb
+
+# Install minikube, should work for all linux
+# https://github.com/kubernetes/minikube/releases
+wget -P /tmp https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+  && sudo install /tmp/minikube-linux-amd64 /usr/local/bin/minikube
+
+# Install Keybase
+sudo dnf install https://prerelease.keybase.io/keybase_amd64.rpm -y
+run_keybase
+
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
+source ~/.zshrc
+# Poetry for ohmyzsh
+# https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh
+mkdir $ZSH_CUSTOM/plugins/poetry
+poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
+
+# zoom
+wget -P /tmp https://zoom.us/client/latest/zoom_amd64.deb
+sudo apt install /tmp/zoom_amd64.deb -y
+
+# JetBrains Toolbox
+wget -P /tmp https://download-cf.jetbrains.com/toolbox/jetbrains-toolbox-1.20.8352.tar.gz
+tar -xvzf /tmp/jetbrains-toolbox-1.20.8352.tar.gz -C /tmp
+sudo mv /tmp/jetbrains-toolbox-1.20.8352/jetbrains-toolbox /usr/local/bin/
+jetbrains-toolbox
+
+# TODO: java openjdk?
+
+# node stuff
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.38.0/install.sh | bash
+
+# https://github.com/cloudflare/cfssl
+# go get -u github.com/cloudflare/cfssl/cmd/...
+# go get: github.com/coreos/bbolt@v1.3.2 updating to
+# 	github.com/coreos/bbolt@v1.3.5: parsing go.mod:
+# 	module declares its path as: go.etcd.io/bbolt
+# 	        but was required as: github.com/coreos/bbolt
+VERSION=$(curl --silent "https://api.github.com/repos/cloudflare/cfssl/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
+VNUMBER=${VERSION#"v"}
+wget "https://github.com/cloudflare/cfssl/releases/download/${VERSION}/cfssl_${VNUMBER}_linux_amd64" -O cfssl
+chmod +x cfssl
+sudo mv cfssl /usr/local/bin
+wget "https://github.com/cloudflare/cfssl/releases/download/${VERSION}/cfssljson_${VNUMBER}_linux_amd64" -O cfssljson
+chmod +x cfssljson
+sudo mv cfssljson /usr/local/bin
