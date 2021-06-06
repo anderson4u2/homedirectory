@@ -22,9 +22,14 @@ Notes in general
 # Keybase
 https://davidwinter.dev/managing-gpg-with-keybase/
 
+```
 keybase pgp export -q XXXX | gpg --import
 keybase pgp export -q XXXX --secret | gpg --allow-secret-key-import --import
+```
 
 # Flameshot
+
+```
 flameshot-start -> flameshot (once)
 flameshot -> flameshot gui
+```
