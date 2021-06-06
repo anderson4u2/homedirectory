@@ -75,3 +75,19 @@ EOF
 sudo mv /tmp/insync.repo /etc/yum.repos.d/insync.repo
 sudo dnf update
 sudo dnf install insync -y
+
+# plex
+sudo tee /etc/yum.repos.d/plex.repo<<EOF
+[Plexrepo]
+name=plexrepo
+baseurl=https://downloads.plex.tv/repo/rpm/\$basearch/
+enabled=1
+gpgkey=https://downloads.plex.tv/plex-keys/PlexSign.key
+gpgcheck=1
+EOF
+
+sudo dnf install plexmediaserver -y
+
+sudo systemctl start plexmediaserver
+sudo systemctl enable plexmediaserver
+systemctl status plexmediaserver
