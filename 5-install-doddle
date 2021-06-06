@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -x
+
+set -e
+
+go get github.com/doddle/doddle-auth
