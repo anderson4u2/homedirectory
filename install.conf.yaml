@@ -8,6 +8,8 @@
     '~'
 
 - link:
+    ~/Code/workspace.toml:                         '/keybase/private/andersonsilva/home/git-workspace/workspace.toml'
+    ~/Code/workspace-tokens.sh:                    '/keybase/private/andersonsilva/home/git-workspace/workspace-tokens.sh'
     ~/.ssh:                                        '/keybase/private/andersonsilva/home/ssh'
     ~/.gitconfig:                                  'gitconfig'
     ~/.gitconfig-doddle:                           'gitconfig-doddle'
