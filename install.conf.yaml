@@ -10,6 +10,8 @@
 - link:
     ~/Code/workspace.toml:                         '/keybase/private/andersonsilva/home/git-workspace/workspace.toml'
     ~/Code/workspace-tokens.sh:                    '/keybase/private/andersonsilva/home/git-workspace/workspace-tokens.sh'
+    ~/.aws/config:                                 '/keybase/private/andersonsilva/home/aws/config'
+    ~/.aws/credentials:                            '/keybase/private/andersonsilva/home/aws/credentials'
     ~/.ssh:                                        '/keybase/private/andersonsilva/home/ssh'
     ~/.gitconfig:                                  'gitconfig'
     ~/.gitconfig-doddle:                           'gitconfig-doddle'
