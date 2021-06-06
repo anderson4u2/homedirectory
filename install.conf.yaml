@@ -7,10 +7,6 @@
 - clean:
     '~'
 
-- create:
-    ~/Code:
-      mode: 0775
-
 - link:
     ~/Code/workspace.toml:                         '/keybase/private/andersonsilva/home/git-workspace/workspace.toml'
     ~/Code/workspace-tokens.sh:                    '/keybase/private/andersonsilva/home/git-workspace/workspace-tokens.sh'
