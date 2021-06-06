@@ -34,10 +34,13 @@ TOOLBOX_URL=$(curl --silent 'https://data.services.jetbrains.com//products/relea
 install -d ${HOME}/bin
 curl -sL ${TOOLBOX_URL} | tar xvz --directory=${HOME}/bin --strip-components=1
 
-# TODO: java openjdk?
-
 # node stuff
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.38.0/install.sh | bash
+
+# Poetry for ohmyzsh
+# https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh
+mkdir $ZSH_CUSTOM/plugins/poetry
+poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
 
 # https://github.com/cloudflare/cfssl
 # go get -u github.com/cloudflare/cfssl/cmd/...
