@@ -56,3 +56,22 @@ sudo mv cfssl /usr/local/bin
 wget "https://github.com/cloudflare/cfssl/releases/download/${VERSION}/cfssljson_${VNUMBER}_linux_amd64" -O cfssljson
 chmod +x cfssljson
 sudo mv cfssljson /usr/local/bin
+
+# insync
+sudo rpm --import https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
+
+source /etc/os-release
+cat << EOF > /tmp/insync.repo
+[insync]
+name=insync repo
+baseurl=http://yum.insync.io/$ID/$VERSION_ID/
+gpgcheck=1
+gpgkey=https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
+enabled=1
+metadata_expire=120m
+
+EOF
+
+sudo mv /tmp/insync.repo /etc/yum.repos.d/insync.repo
+sudo dnf update
+sudo dnf install insync -y
