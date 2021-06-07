@@ -198,3 +198,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 alias ddcode='~/Code/github/doddle'
 alias ddauth='~/.doddle-auth.sh'
+
+# by running `vault -autocomplete-install`
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/vault vault
