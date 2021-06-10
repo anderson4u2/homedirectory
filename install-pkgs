@@ -39,6 +39,11 @@ while read pkg; do
   sudo apt -y install $pkg
 done <pkgs
 
+# vault
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install vault
+
 # Installing Snapcraft stuff
 sudo snap install authy --beta
 sudo snap install bitwarden
