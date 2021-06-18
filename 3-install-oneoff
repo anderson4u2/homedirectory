@@ -52,6 +52,8 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
        https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 
+sudo dnf install google-cloud-sdk -y
+
 # END OF INSTALLING GCLOUD THE GOOGLE WAY
 
 # Poetry for ohmyzsh
@@ -93,22 +95,6 @@ sudo mv /tmp/insync.repo /etc/yum.repos.d/insync.repo
 sudo dnf update
 sudo dnf install insync -y
 
-# plex
-sudo tee /etc/yum.repos.d/plex.repo<<EOF
-[Plexrepo]
-name=plexrepo
-baseurl=https://downloads.plex.tv/repo/rpm/\$basearch/
-enabled=1
-gpgkey=https://downloads.plex.tv/plex-keys/PlexSign.key
-gpgcheck=1
-EOF
-
-sudo dnf install plexmediaserver -y
-
-sudo systemctl start plexmediaserver
-sudo systemctl enable plexmediaserver
-systemctl status plexmediaserver
-
 # docker
 sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager \
@@ -117,7 +103,7 @@ sudo dnf config-manager \
 sudo dnf install docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 sudo usermod -aG docker $USER
-udo systemctl enable docker.service
+sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
 # azure-cli
@@ -130,4 +116,4 @@ gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/azure-cli.repo
 
 sudo dnf install azure-cli
-az login
+# az login
