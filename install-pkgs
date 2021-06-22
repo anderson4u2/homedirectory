@@ -4,20 +4,20 @@ set -x
 
 set -e
 
-brew update
-brew tap homebrew/cask-drivers
+#brew update
+#brew tap homebrew/cask-drivers
 
 while read pkg; do
-  if test ! $(which pkg); then
-    echo "Installing $pkg"
-    brew install $pkg
-  fi
+ if test ! $(which pkg); then
+   echo "Installing $pkg"
+   brew install $pkg
+ fi
 done <pkgs-mac
 
 while read cask; do
   if test ! $(which cask); then
     echo "Installing cask $cask"
-    brew cask install $cask
+    brew install --cask $cask
   fi
 done <pkgs-mac-cask
 
@@ -56,5 +56,3 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 source ~/.zshrc
 mkdir $ZSH/plugins/poetry
 poetry completions zsh > $ZSH/plugins/poetry/_poetry
-
-sudo snap install kontena-lens --classic

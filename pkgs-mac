@@ -1,18 +1,22 @@
 awscli
 bash
+bat
 coreutils
 direnv
 findutils
 fzf
 git-extras
 golang
+gpg
 hadolint
 helm
 htop
 httpie
+insync
 iproute2mac
 kubectl
 kubectx
+minikube
 moreutils
 neovim
 nload
@@ -22,7 +26,8 @@ pyenv
 pwgen
 ranger
 shellcheck
-terraform
+slack
+spotify
 the_silver_searcher
 tig
 tmux
@@ -30,3 +35,4 @@ vim
 warrensbox/tap/tfswitch
 wget
 yq
+zoom

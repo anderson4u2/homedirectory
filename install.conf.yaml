@@ -4,13 +4,19 @@
       create: true
       relink: true
 
-- clean:
-    '~'
+- clean: "~"
 
 - link:
-    ~/.ssh:                                        '/Volumes/Keybase/private/andersonsilva/home/ssh'
-    ~/.gitconfig:                                  'gitconfig'
-    ~/.gitignore:                                  'gitignore'
+    ~/Code/workspace.toml: "/Volumes/Keybase/private/andersonsilva/home/git-workspace/workspace.toml"
+    ~/Code/workspace-tokens.sh: "/Volumes/Keybase/private/andersonsilva/home/git-workspace/workspace-tokens.sh"
+    ~/.aws/config: "/Volumes/Keybase/private/andersonsilva/home/aws/config"
+    ~/.aws/credentials: "/Volumes/Keybase/private/andersonsilva/home/aws/credentials"
+    ~/.ssh: "/Volumes/Keybase/private/andersonsilva/home/ssh"
+    ~/.gitconfig: "gitconfig"
+    ~/.gitconfig-doddle: "gitconfig-doddle"
+    ~/.gitignore: "gitignore"
+    ~/.config/terminator/config: "terminator.cfg"
+    ~/.doddle-auth.sh: "doddle-auth.sh"
     ~/.zshrc:
-      path: 'zshrc'
+      path: "zshrc"
       force: true

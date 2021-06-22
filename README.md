@@ -18,3 +18,22 @@ Notes in general
 - Install redshift manager from bottom right corner
 - Configure terminator to startup with machine
 - Configure loginMode=restorePreviousLogout
+
+# Keybase
+
+#### curl + gpg pro tip: import andersonsilva's keys
+
+curl https://keybase.io/andersonsilva/pgp_keys.asc | gpg --import
+
+#### the Keybase app can push to gpg keychain, too
+
+keybase pgp pull andersonsilva
+
+
+https://stackoverflow.com/questions/51504367/gpg-agent-forwarding-inappropriate-ioctl-for-device
+export GPG_TTY=$(tty)
+
+#### secrets bit
+
+keybase pgp export -q XXXX --secret | gpg --allow-secret-key-import --import
+
