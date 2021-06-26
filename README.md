@@ -33,3 +33,9 @@ keybase pgp export -q XXXX --secret | gpg --allow-secret-key-import --import
 flameshot-start -> flameshot (once)
 flameshot -> flameshot gui
 ```
+
+settings -> keyboard -> custom shortcuts ->
+
+- name: `flameshot`
+- command: `flameshot gui`
+- shortcut: `shitf + alt + $`
