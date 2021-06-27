@@ -33,6 +33,11 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 dnf check-update | true
 sudo dnf -y install code
 
+# flathub
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+flatpak install flathub com.calibre_ebook.calibre -y
+
 # Install snapd for installing snaps later
 sudo dnf -y install snapd
 sleep 5
