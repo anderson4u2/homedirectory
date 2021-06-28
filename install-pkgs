@@ -21,6 +21,8 @@ while read cask; do
   fi
 done <pkgs-mac-cask
 
+brew install stern
+
 brew cleanup
 
 pip3 install flake8
