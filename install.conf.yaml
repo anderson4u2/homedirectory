@@ -17,6 +17,8 @@
     ~/.gitignore: "gitignore"
     ~/.config/terminator/config: "terminator.cfg"
     ~/.doddle-auth.sh: "doddle-auth.sh"
+    ~/.gnupg/gpg-agent.conf: "gpg-agent.conf"
     ~/.zshrc:
       path: "zshrc"
       force: true
+w
