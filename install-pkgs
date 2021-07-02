@@ -21,6 +21,9 @@ while read cask; do
   fi
 done <pkgs-mac-cask
 
+# fzf autocompletion/keybindings etc, safe to run over and over
+$(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
+
 brew install stern
 
 brew cleanup
