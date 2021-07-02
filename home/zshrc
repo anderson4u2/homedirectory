@@ -75,6 +75,7 @@ plugins=(
     # colorize \
     docker\
     docker-compose \
+    fzf \
     # gem \
     git \
     git-flow \
@@ -202,3 +203,5 @@ alias ddauth='~/.doddle-auth.sh'
 # by running `vault -autocomplete-install`
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/vault vault
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

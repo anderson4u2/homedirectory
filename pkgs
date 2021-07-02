@@ -7,7 +7,6 @@ copyq
 ctags
 direnv
 evolution-ews
-fzf
 gcc
 gcc-c++
 git-extras
