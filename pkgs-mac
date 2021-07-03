@@ -1,6 +1,7 @@
 awscli
 bash
 bat
+cfssl
 coreutils
 direnv
 findutils
