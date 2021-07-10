@@ -1,7 +1,9 @@
+1password
 awscli
 bash
 bat
 cfssl
+cheat
 coreutils
 direnv
 findutils
@@ -36,6 +38,7 @@ tmux
 vault
 vim
 warrensbox/tap/tfswitch
+watch
 wget
 yq
 zoom
