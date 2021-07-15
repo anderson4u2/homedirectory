@@ -18,6 +18,7 @@ htop
 httpie
 insync
 iproute2mac
+jq
 kubectl
 kubectx
 minikube
