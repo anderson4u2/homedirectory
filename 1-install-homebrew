@@ -15,7 +15,7 @@ echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
 brew tap orf/brew
 brew install git-workspace
 
-brew install fzf
+zsh -c 'brew install fzf'
 $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
 brew install jupyterlab
 brew install kubectx
