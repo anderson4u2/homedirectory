@@ -12,6 +12,11 @@ source /etc/os-release
 wget -P /tmp https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
   && sudo install /tmp/minikube-linux-amd64 /usr/local/bin/minikube
 
+# Google Chrome
+sudo dnf install fedora-workstation-repositories -y
+sudo dnf config-manager --set-enabled google-chrome
+sudo dnf install google-chrome-stable -y
+
 # Install Keybase
 sudo dnf install https://prerelease.keybase.io/keybase_amd64.rpm -y
 run_keybase
@@ -58,8 +63,8 @@ sudo dnf install google-cloud-sdk -y
 
 # Poetry for ohmyzsh
 # https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh
-mkdir $ZSH_CUSTOM/plugins/poetry
-poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
+mkdir $HOME/.oh-my-zsh/custom/plugins/poetry
+poetry completions zsh > $HOME/.oh-my-zsh/custom/plugins/poetry/_poetry
 
 # https://github.com/cloudflare/cfssl
 # go get -u github.com/cloudflare/cfssl/cmd/...
