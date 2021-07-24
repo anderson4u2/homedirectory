@@ -17,7 +17,6 @@ java-1.8.0-openjdk
 libcurl
 libcurl-devel
 libreoffice
-kubectl
 make
 megasync
 meld
