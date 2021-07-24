@@ -5,6 +5,7 @@ conda
 copyq
 ctags
 direnv
+docker-compose
 evolution-ews
 gcc
 gcc-c++
