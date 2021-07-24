@@ -14,6 +14,7 @@ golang
 htop
 httpie
 java-1.8.0-openjdk
+kubectl
 libcurl
 libcurl-devel
 libreoffice
