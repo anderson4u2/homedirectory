@@ -23,3 +23,6 @@ brew install kubectx
 brew install derailed/k9s/k9s
 brew install stern
 brew install warrensbox/tap/tfswitch
+
+# krew plugins
+kubectl krew install get-all
