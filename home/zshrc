@@ -205,3 +205,5 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/vault vault
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

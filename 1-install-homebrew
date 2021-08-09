@@ -18,6 +18,7 @@ brew install git-workspace
 zsh -c 'brew install fzf'
 $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
 brew install jupyterlab
+brew install krew
 brew install kubectx
 brew install derailed/k9s/k9s
 brew install stern
