@@ -235,3 +235,10 @@ complete -o nospace -C /usr/bin/vault vault
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 # ==> Source in your profile to add the Google Cloud SDK command line tools to your $PATH.
 source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+
+# https://www.vaultproject.io/docs/commands
+# export VAULT_TOKEN=xxxxx
+# root_token=s.xxxxx
+export VAULT_ADDR=http://poc-33f25fbd-vault-nlb-48408196307eecb2.elb.eu-west-2.amazonaws.com:8200
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

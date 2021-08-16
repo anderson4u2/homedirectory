@@ -20,6 +20,8 @@ httpie
 insync
 iproute2mac
 jq
+jupyterlab
+krew
 kubectl
 kubectx
 minikube
