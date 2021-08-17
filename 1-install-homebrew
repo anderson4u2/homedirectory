@@ -26,3 +26,7 @@ brew install warrensbox/tap/tfswitch
 
 # krew plugins
 kubectl krew install get-all
+
+# kubeval
+brew tap instrumenta/instrumenta
+brew install kubeval
