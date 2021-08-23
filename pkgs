@@ -8,6 +8,7 @@ ctags
 direnv
 docker-compose
 evolution-ews
+etcd
 gcc
 gcc-c++
 git-extras
